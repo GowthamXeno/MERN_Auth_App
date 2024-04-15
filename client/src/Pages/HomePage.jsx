@@ -19,7 +19,7 @@ function HomePage() {
 
   const handleLogout = () => {
     axios
-      .get("http://localhost:8080/auth/logout", {
+      .get("https://mern-auth-app-5g6h.onrender.com/auth/logout", {
         withCredentials: true,
       })
       .then(() => {
@@ -43,7 +43,7 @@ function HomePage() {
          const token = localStorage.getItem("fullCookie"); // Replace with your actual JWT token
 
         const response = await axios.get(
-          `http://localhost:8080/api/user/profile/`,
+          `https://mern-auth-app-5g6h.onrender.com/api/user/profile/`,
           // `http://localhost:8080/api/user/profile/?token=${token}`,
           {
             withCredentials: true,

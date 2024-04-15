@@ -27,7 +27,7 @@ function ForgetPwPage() {
     notifyLoading();
     try {
       const response = await axios.post(
-        "https://mern-auth-app-api-1uwo.onrender.com/password/forgot-password",
+        "https://mern-auth-app-5g6h.onrender.com/password/forgot-password",
         { email }
       );
       setMessage(response.data.message);
