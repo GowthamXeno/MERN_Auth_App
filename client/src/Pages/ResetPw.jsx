@@ -14,7 +14,7 @@ function ResetPwPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://mern-auth-app-5g6h.onrender.com/password/reset-password",
+        "https://mern-authentication-app-ewyj.onrender.com/password/reset-password",
         { resetToken: token, newPassword }
       );
       console.log("Reset password response:", response.data);

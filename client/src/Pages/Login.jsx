@@ -65,7 +65,7 @@ function AuthPage() {
     try {
       const response = await axios.post(
         // `https://mern-auth-app-api-1uwo.onrender.com/api/${
-        `https://mern-auth-app-5g6h.onrender.com/api/${
+        `https://mern-authentication-app-ewyj.onrender.com/api/${
           !signin ? "login" : "register"
         }`,
         formData
@@ -96,7 +96,7 @@ function AuthPage() {
   const handleGoogleLogin = (event) => {
     event.preventDefault();
     window.location.href =
-      "https://mern-auth-app-5g6h.onrender.com/auth/google";
+      "https://mern-authentication-app-ewyj.onrender.com/auth/google";
       // "https://mern-auth-app-api-1uwo.onrender.com/auth/google";
   };
 
