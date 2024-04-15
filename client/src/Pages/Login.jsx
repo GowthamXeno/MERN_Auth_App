@@ -47,7 +47,7 @@ function AuthPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-     if (!formData.username.trim()) {
+     if (!formData.username.trim() && !signin) {
        notifyError("Username cannot be empty");
        return;
      }
