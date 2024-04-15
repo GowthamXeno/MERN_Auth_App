@@ -2,37 +2,50 @@ import React, { useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function ResetPwPage() {
-
-
-
   const { token } = useParams();
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const notifySuccess = (message) => {
+    toast.success(message);
+  };
+
+  const notifyError = (error) => {
+    toast.error(error.message || "An error occurred");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    notifyLoading();
     try {
       const response = await axios.post(
         "https://mern-authentication-app-ewyj.onrender.com/password/reset-password",
         { resetToken: token, newPassword }
       );
-      console.log("Reset password response:", response.data);
       setMessage(response.data.message);
+      notifySuccess(response.data.message);
     } catch (error) {
       console.error(
         "Reset password error:",
         error.response ? error.response.data : error
       );
+      notifyError(error);
     }
   };
 
-   const handleGoToLogin = () => {
-     window.location.href = "/";
-   };
-
+  const handleGoToLogin = () => {
+    window.location.href = "/";
+  };
+  const notifyLoading = () => {
+  toast.info("Sending Reset Request...");
+  };
   return (
     <>
+      <ToastContainer />
       <div className="LoginPage">
         <Container className="LoginPageContainer">
           <Row className="PwPageContainer">
@@ -41,7 +54,6 @@ function ResetPwPage() {
                 <h1>Reset Password</h1>
                 <p>Enter your new password below</p>
                 <form className="form-pw" onSubmit={handleSubmit}>
-
                   <input
                     type="password"
                     value={newPassword}
@@ -53,11 +65,10 @@ function ResetPwPage() {
                 </form>
                 {message && (
                   <div className="ResponseDiv">
-                    <p>{message}Your Password Reseted SuccessFully</p>
+                    <p>{message}</p>
                     <button onClick={handleGoToLogin}>Back to Login</button>
                   </div>
                 )}
-
               </div>
             </Col>
           </Row>

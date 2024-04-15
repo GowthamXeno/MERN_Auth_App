@@ -17,6 +17,7 @@ function AuthPage() {
   const notifyError = (message) => {
     toast.error(message);
   };
+  
 
   function ToggleSign(event) {
     event.preventDefault();
@@ -35,15 +36,6 @@ function AuthPage() {
       [name]: value,
     }));
   }
-  // useEffect(() => {
-  //   const urlParams = new URLSearchParams(window.location.search);
-  //   const token = urlParams.get("token");
-
-  //   if (token) {
-  //     localStorage.setItem("token", token);
-  //     window.history.replaceState({}, document.title, "/AuthPage"); // Remove token from URL
-  //   }
-  // }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
