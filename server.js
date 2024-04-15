@@ -175,11 +175,11 @@ app.get("/api/user/profile", async (req, res) => {
 });
 
 // Serve static files
-app.use(express.static(path.join(__dirname, "/Frontend/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 // Catch-all route to serve React app
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/Frontend/build/index.html"))
+  res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
 
 const Port = 8080;
