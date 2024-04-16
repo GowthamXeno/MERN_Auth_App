@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ResetPwPage() {
+  const { token } = useParams();
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
 
@@ -17,7 +19,7 @@ function ResetPwPage() {
   };
 
   const notifyLoading = () => {
-  toast.info("Sending Reset Request...");
+    toast.info("Sending Reset Request...");
   };
 
   const handleSubmit = async (e) => {
@@ -43,7 +45,6 @@ function ResetPwPage() {
     window.location.href = "/";
   };
 
-  
   return (
     <>
       <ToastContainer />
