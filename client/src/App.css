@@ -350,136 +350,136 @@ box-shadow: 0 0 5px 1px white;
     font-size: 12px ;
     font-weight: 500;
 }
-        .toggle-container{
-            display:none !important;
-        }
-        .LoginPageContainer,
-        .HomePageContainer{
-            max-width: 320px !important;
-            min-height: 450px !important;
-            border-radius: 19px !important;
-            overflow: hidden !important; 
-        }
-        .LoginPageContainer button,
-        .HomePageContainer button
-        {
-        font-size: 10px;
-        padding: 8px 30px;
-        border-radius: 6px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        margin-top: 8px;
-        cursor: pointer;
-    }
-        .LoginPageContainer p{
-            font-size: 14px !important;
-        }
-        .LoginPageContainer span{
-            font-size: 12px !important;
-            margin-bottom: 10px !important;
-        }
-        .form-container{
-            width: 100% !important;
-        }
-        h1{
-      font-size: 1.5rem !important;
-      font-weight: bold !important;
-        }
-        .LoginPageContainer a{
-        font-size: 12px;}
-        .LoginPageContainer form{
-            padding: 0 27px !important;
-        }
-        
-    .GoogleBtn{
-         font-size: 11px !important;
-         padding: 5px 10px !important;
-    }
-    .GoogleBtn .icon {
-      font-size:15px !important;
-      margin-right: 10px !important;
-    }
-    .LoginPageContainer input{
-        margin: 8px 0;
-        padding: 8px 12px;
-        font-size: 10px;
-        width:85%;
-    } 
-    .LoginPageContainer.active .sign-up{
-        transform: translateY(6%) !important;
-    }
-    .LoginPageContainer .sign-up{
-        transform: translateY(-5%) !important;
-    }
+.toggle-container{
+    display:none !important;
+}
+.LoginPageContainer,
+.HomePageContainer{
+    max-width: 320px !important;
+    min-height: 450px !important;
+    border-radius: 19px !important;
+    overflow: hidden !important; 
+}
+.LoginPageContainer button,
+.HomePageContainer button
+{
+font-size: 10px;
+padding: 8px 30px;
+border-radius: 6px;
+font-weight: 600;
+letter-spacing: 0.5px;
+text-transform: uppercase;
+margin-top: 8px;
+cursor: pointer;
+}
+.LoginPageContainer p{
+    font-size: 14px !important;
+}
+.LoginPageContainer span{
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+}
+.form-container{
+    width: 100% !important;
+}
+h1{
+font-size: 1.5rem !important;
+font-weight: bold !important;
+}
+.LoginPageContainer a{
+font-size: 12px;}
+.LoginPageContainer form{
+    padding: 0 27px !important;
+}
     
-    .LoginPageContainer.active .sign-in{
-        transform: translateY(40%) !important;
-    }
-    .LoginPageContainer .sign-in{
-        transform: translateY(-5%) !important;
-    }
-    h1{
-        margin-bottom: 0 !important;
-    }
-    .OverlayAnimation{
-        transform: translateY(127%) !important;
-        transition: all 1s ease !important;
-        display: block !important;
-        content: " ";
-        overflow: hidden !important;
-        border-radius: 20px !important;
-        height: 300px !important;
-        width:100% !important; 
-        z-index: 200 !important;
-        color: white !important;
-        background: linear-gradient(to right, #C33764  , #1D2671);
-    }
-    .LoginPageContainer.active .OverlayAnimation{
-        transform: translateY(-65%) !important;
-        display: flex !important;
-        content: " ";
-        height: 200px !important;
-        border-radius: 20px !important;
-        width:100% !important; 
-        z-index: 999 !important;
-        background: linear-gradient(to right, #dd678c  , #6370e7);
-    }
-    .OverlayAnimation{
-        display: flex !important;
-        justify-content: center !important; 
-        margin-bottom: auto !important;
-        margin-top: auto !important;
-        position:relative;
-    }
-    .OverlayAnimation button{
-        margin-top: -7px !important;
-    }
-    .togglebtnlogin{
-        display: flex !important;
-        justify-content: center !important;
-        position: absolute !important;
-        flex-direction: column !important;
-        top:1% !important;
-    }
-    
-    .LoginPageContainer.active .OverlayAnimation .togglebtnlogin{
-        top:auto !important;
-        bottom: 0 !important;
-    
-    }
-    .LoginPageContainer.active .OverlayAnimation button{
-        /* padding: 6px 20px !important; */
-        margin-top: 0 !important;
-    }
-    .LoginPageContainer.active .OverlayAnimation span{
-        /* padding: 6px 20px !important; */
-        margin-top: 4px !important;
-        margin-bottom: 5px !important;
-    }
-    .form-pw{
+.GoogleBtn{
+        font-size: 11px !important;
+        padding: 5px 10px !important;
+}
+.GoogleBtn .icon {
+    font-size:15px !important;
+    margin-right: 10px !important;
+}
+.LoginPageContainer input{
+    margin: 8px 0;
+    padding: 8px 12px;
+    font-size: 10px;
+    width:85%;
+} 
+.LoginPageContainer.active .sign-up{
+    transform: translateY(6%) !important;
+}
+.LoginPageContainer .sign-up{
+    transform: translateY(-5%) !important;
+}
 
-    height:auto !important;
+.LoginPageContainer.active .sign-in{
+    transform: translateY(40%) !important;
+}
+.LoginPageContainer .sign-in{
+    transform: translateY(-5%) !important;
+}
+h1{
+    margin-bottom: 0 !important;
+}
+.OverlayAnimation{
+    transform: translateY(127%) !important;
+    transition: all 1s ease !important;
+    display: block !important;
+    content: " ";
+    overflow: hidden !important;
+    border-radius: 20px !important;
+    height: 300px !important;
+    width:100% !important; 
+    z-index: 200 !important;
+    color: white !important;
+    background: linear-gradient(to right, #C33764  , #1D2671);
+}
+.LoginPageContainer.active .OverlayAnimation{
+    transform: translateY(-65%) !important;
+    display: flex !important;
+    content: " ";
+    height: 200px !important;
+    border-radius: 20px !important;
+    width:100% !important; 
+    z-index: 999 !important;
+    background: linear-gradient(to right, #dd678c  , #6370e7);
+}
+.OverlayAnimation{
+    display: flex !important;
+    justify-content: center !important; 
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+    position:relative;
+}
+.OverlayAnimation button{
+    margin-top: -7px !important;
+}
+.togglebtnlogin{
+    display: flex !important;
+    justify-content: center !important;
+    position: absolute !important;
+    flex-direction: column !important;
+    top:1% !important;
+}
+
+.LoginPageContainer.active .OverlayAnimation .togglebtnlogin{
+    top:auto !important;
+    bottom: 0 !important;
+
+}
+.LoginPageContainer.active .OverlayAnimation button{
+    /* padding: 6px 20px !important; */
+    margin-top: 0 !important;
+}
+.LoginPageContainer.active .OverlayAnimation span{
+    /* padding: 6px 20px !important; */
+    margin-top: 4px !important;
+    margin-bottom: 5px !important;
+}
+.form-pw{
+
+height:auto !important;
 }
 .PwPage p{
     text-align: center !important;

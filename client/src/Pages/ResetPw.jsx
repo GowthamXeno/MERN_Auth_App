@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -16,6 +15,10 @@ function ResetPwPage() {
 
   const notifyError = (error) => {
     toast.error(error.message || "An error occurred");
+  };
+
+  const notifyLoading = () => {
+  toast.info("Sending Reset Request...");
   };
 
   const handleSubmit = async (e) => {
@@ -40,9 +43,8 @@ function ResetPwPage() {
   const handleGoToLogin = () => {
     window.location.href = "/";
   };
-  const notifyLoading = () => {
-  toast.info("Sending Reset Request...");
-  };
+
+  
   return (
     <>
       <ToastContainer />

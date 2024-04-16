@@ -34,7 +34,7 @@ app.use(passport.session());
 // CORS configuration
 app.use(
   cors({
-    origin: "https://mern-authentication-app-ewyj.onrender.com", // Replace with your frontend address
+    origin: "https://mern-authentication-app-ewyj.onrender.com", 
     credentials: true,
   })
 );
@@ -86,7 +86,7 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   function (req, res) {
-    res.redirect("https://mern-authentication-app-ewyj.onrender.com/Home"); // Replace with your frontend address
+    res.redirect("https://mern-authentication-app-ewyj.onrender.com/Home"); 
   }
 );
 

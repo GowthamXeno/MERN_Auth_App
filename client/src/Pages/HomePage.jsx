@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col, Row, Button, Spinner } from "react-bootstrap";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function HomePage() {
+function HomePage(props) {
+
+  const notifyLoading = () => {
+    toast.info("Logging Out Successfull..");
+  };
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const fullCookie = urlParams.get("cookie");
-    console.log("Cookie = ", fullCookie);
-
-
-    if (fullCookie) {
-      localStorage.setItem("fullCookie", fullCookie);
-    }
-  }, []);
 
   const handleLogout = () => {
     axios
@@ -23,9 +20,10 @@ function HomePage() {
         withCredentials: true,
       })
       .then(() => {
-        window.location.href = "/"; // Redirect to login page
-        setUser(null); // Clear user data in the frontend
+        window.location.href = "/"; 
+        setUser(null); 
         localStorage.removeItem("user");
+        notifyLoading();
       })
       .catch((error) => {
         console.error("Error logging out:", error);
@@ -39,12 +37,8 @@ function HomePage() {
       setLoading(false);
     } else {
       try {
-
-         const token = localStorage.getItem("fullCookie"); // Replace with your actual JWT token
-
         const response = await axios.get(
           `https://mern-authentication-app-ewyj.onrender.com/api/user/profile/`,
-          // `http://localhost:8080/api/user/profile/?token=${token}`,
           {
             withCredentials: true,
           }
@@ -64,6 +58,7 @@ function HomePage() {
 
   return (
     <>
+    <ToastContainer />
       <div className="LoginPage">
         <Container className="HomePageContainer ProfileContainer">
           {loading ? (
