@@ -25,7 +25,7 @@ function ResetPwPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
      if (newPassword.length < 8) {
-       notifyError("Password must be at least 8 characters long");
+       toast.error("Password must be at least 8 characters long");
        return;
      }
     notifyLoading();
