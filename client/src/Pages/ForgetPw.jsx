@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 function ForgetPwPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -23,6 +24,11 @@ function ForgetPwPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      notifyError("Please enter a valid email address");
+      return;
+    }
     setLoading(true);
     notifyLoading();
     try {

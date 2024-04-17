@@ -44,8 +44,9 @@ function AuthPage() {
        return;
      }
 
-     if (!formData.email.trim()) {
-       notifyError("Email cannot be empty");
+     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+     if (!emailRegex.test(formData.email)) {
+       notifyError("Enter a valid email address");
        return;
      }
 

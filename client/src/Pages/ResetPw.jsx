@@ -24,6 +24,10 @@ function ResetPwPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     if (formData.password.length < 8) {
+       notifyError("Password must be at least 8 characters long");
+       return;
+     }
     notifyLoading();
     try {
       const response = await axios.post(
