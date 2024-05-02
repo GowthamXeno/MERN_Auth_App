@@ -28,11 +28,22 @@ const transporter = nodemailer.createTransport({
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     refreshToken: process.env.GOOGLE_REFRESH_TOKEN,
     accessToken: async () => {
-      const accessToken = await oauth2Client.getAccessToken();
+      const accessToken = await getAccessToken();
       return accessToken;
     },
   },
 });
+
+// Function to refresh OAuth2 token
+async function getAccessToken() {
+  try {
+    const { token } = await oauth2Client.getAccessToken();
+    return token;
+  } catch (error) {
+    console.error("Error refreshing access token:", error);
+    throw error;
+  }
+}
 
 // Forgot Password
 router.post("/forgot-password", async (req, res) => {
